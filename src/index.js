@@ -84,6 +84,8 @@ copyButton.addEventListener('click', e => {
 
   try {
     document.execCommand('copy');
+
+    copyButton.innerText = 'Copied';
   } catch (err) {
     displayError('Your browser does not support copying to clipboard');
   }
