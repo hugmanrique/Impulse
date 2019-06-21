@@ -21,3 +21,8 @@ a, code {
 #bungee {
   min-height: 16rem;
 }
+
+#copyToClipboard {
+  position: absolute;
+  left: -100%;
+}

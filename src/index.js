@@ -8,6 +8,7 @@ const errorAlert = document.getElementById('errorAlert');
 const convertedBlock = document.getElementById('converted');
 const convertedConfig = document.getElementById('convertedConfig');
 const copyButton = document.getElementById('copyButton');
+const clipboardArea = document.getElementById('copyToClipboard');
 
 let converting = false;
 
@@ -76,8 +77,10 @@ clearButton.addEventListener('click', e => {
 copyButton.addEventListener('click', e => {
   e.preventDefault();
 
-  convertedConfig.focus();
-  convertedConfig.select();
+  clipboardArea.value = convertedConfig.innerText;
+
+  clipboardArea.focus();
+  clipboardArea.select();
 
   try {
     document.execCommand('copy');
