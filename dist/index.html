@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width" />
+  <title>Impulse</title>
+  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 font-sans leading-normal tracking-normal border-blue-500 border-t-8">
+  <main class="content mx-auto px-4">
+    <h1 class="mt-16 font-bold text-4xl">Impulse</h1>
+    <p class="mt-4">
+      This tool converts your BungeeCord <code>config.yml</code> file into a <code>velocity.toml</code> file.
+    </p>
+    <div class="mt-8 px-4 py-3 text-red-700 bg-red-100 border border-red-300 rounded" id="errorAlert" role="alert"
+      hidden>
+    </div>
+    <form class="mt-8" id="convert-form">
+      <label class="block uppercase tracking-wide text-gray-700 text-sm font-bold" for="bungee">
+        BungeeCord config file
+      </label>
+      <textarea
+        class="mt-2 appearance-none w-full py-3 px-4 text-sm font-mono leading-tight bg-blue-100 border border-blue-200 rounded focus:outline-none focus:bg-white focus:border-gray-500"
+        id="bungee" placeholder="Paste your config.yml here"></textarea>
+      <div class="mt-4 flex items-center justify-between">
+        <button class="text-blue-600" id="clear">Clear</button>
+        <button
+          class="inline-block align-baseline py-2 px-4 text-blue-800 font-semibold bg-blue-200 hover:bg-blue-500 hover:text-white rounded"
+          id="convert" type="submit">Convert</button>
+      </div>
+    </form>
+    <div class="mt-16" id="converted" hidden>
+      <p>Here's your converted <code>velocity.toml</code> file. You will need to tweak Velocity specific settings such
+        as player info forwarding.
+        Note permissions are not natively suported by Velocity.
+        Instead, you will need a plugin such as <a href="https://luckperms.github.io/">LuckPerms</a>.
+      </p>
+      <p class="mt-4">
+        Check out <a href="https://docs.velocitypowered.com/en/latest/users/configuration.html">Velocity's
+          documentation</a> for more details about each setting. You can also ask on any official <a
+          href="https://www.velocitypowered.com/community">communication channels</a>.
+      </p>
+      <p class="mt-6 block uppercase tracking-wide text-gray-700 text-sm font-bold">Converted Velocity config</p>
+      <pre class="mt-2 p-4 overflow-x-auto" id="convertedConfig"></pre>
+    </div>
+  </main>
+  <footer class="my-12 text-center text-gray-600">
+    <p>Copyright &copy; Hugo Manrique</p>
+    <p>Licensed under <a href="https://github.com/hugmanrique/Impulse/blob/master/LICENSE">MIT</a>. Source code
+      available on <a href="https://github.com/hugmanrique/Impulse">GitHub</a></p>
+  </footer>
+  <script src="main.js"></script>
+</body>
+</html>

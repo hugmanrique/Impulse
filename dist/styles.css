@@ -1,0 +1,23 @@
+@media only screen and (min-width: 768px) {
+  .content {
+    max-width: 70ch;
+  }
+}
+
+pre, code {
+  font-size: .875rem;
+  background-color: #EBF8FF;
+  border-radius: .25rem;
+}
+
+code {
+  padding: 0.125rem .25rem 0;
+}
+
+a, code {
+  color: #3182CE;
+}
+
+#bungee {
+  min-height: 16rem;
+}
