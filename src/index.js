@@ -7,6 +7,7 @@ const submitButton = document.getElementById('convert');
 const errorAlert = document.getElementById('errorAlert');
 const convertedBlock = document.getElementById('converted');
 const convertedConfig = document.getElementById('convertedConfig');
+const copyButton = document.getElementById('copyButton');
 
 let converting = false;
 
@@ -70,4 +71,17 @@ clearButton.addEventListener('click', e => {
   e.preventDefault();
 
   bungeeInput.value = '';
+});
+
+copyButton.addEventListener('click', e => {
+  e.preventDefault();
+
+  convertedConfig.focus();
+  convertedConfig.select();
+
+  try {
+    document.execCommand('copy');
+  } catch (err) {
+    displayError('Your browser does not support copying to clipboard');
+  }
 });
